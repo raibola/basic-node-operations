@@ -1,0 +1,106 @@
+1. Run the commands sort, wc and uniq on the commands.js file. Explain how they work and what the output was.
+
+Answer: sort command sorted the contents of the file, line by line. 
+
+                done(data);
+            if (err) throw err;
+        const fileName = fullPath[0];
+        done(userInput);
+        fs.readFile(fileName, (err, data) => {
+        });
+       break;
+       commandLibrary.cat(userInputArray.slice(1));
+      break;
+      commandLibrary.echo(userInputArray.slice(1).join(" "));
+     //we will add the functionality of echo next within the object commandLibrary    
+     process.stdout.write('\nprompt > ');
+     process.stdout.write(output);
+    "cat": function(fullPath) {
+    "echo": function(userInput) {
+    case "cat":
+    case "echo":
+    }
+    },
+   const command = userInputArray[0];
+   const userInputArray = userInput.split(" ");
+   switch (command) {
+  //parses the user input to understand which command was typed
+  }
+ const commandLibrary = {
+ function done(output) {
+ function evaluateCmd(userInput) {
+ module.exports.commandLibrary = commandLibrary;
+ module.exports.evaluateCmd = evaluateCmd;
+ }
+ }
+ };
+//where we will store our commands
+//where we will store the logic of our commands
+//write out data
+const fs = require("fs");
+
+wc command printed the line count, word count and bytes of the file.
+
+        40     113    1089 commands.js
+
+uniq command sorts each line of the file and only returns different lines.
+
+        const fs = require("fs");
+
+//write out data
+ function done(output) {
+     process.stdout.write(output);
+     process.stdout.write('\nprompt > ');
+ }
+
+//where we will store our commands
+ function evaluateCmd(userInput) {
+  //parses the user input to understand which command was typed
+   const userInputArray = userInput.split(" ");
+   const command = userInputArray[0];
+
+   switch (command) {
+    case "echo":
+     //we will add the functionality of echo next within the object commandLibrary    
+      commandLibrary.echo(userInputArray.slice(1).join(" "));
+      break;
+    case "cat":
+       commandLibrary.cat(userInputArray.slice(1));
+       break;
+  }
+ }
+
+//where we will store the logic of our commands
+ const commandLibrary = {
+    "echo": function(userInput) {
+        done(userInput);
+    },
+    "cat": function(fullPath) {
+        const fileName = fullPath[0];
+        fs.readFile(fileName, (err, data) => {
+            if (err) throw err;
+            done(data);
+        });
+    }
+ };
+
+ module.exports.commandLibrary = commandLibrary;
+ module.exports.evaluateCmd = evaluateCmd;
+
+2. Using the pipe (|) connect at least two commands and run it on commands.js. Explain what the output was and why the specific data was outputted.
+
+Answer: uniq commands.js | wc
+      40     113    1089
+
+The output first ran uniq and sorted the lines with no duplicates and then the wc printed the lines, word count and byte of the file after checking all the lines.
+
+6. Given a string, reverse the order of characters in each word within a sentence while maintaining the original word order and whitespace and return the string. To improve your problem-solving experience, use the suggested functions to solve the problem
+
+```
+function reverseString(string){
+return string.split("").reverse().join("").split(" ").reverse().join(" ")  
+}
+
+console.log(reverseString('Hello Bloc!'));
+```
+
